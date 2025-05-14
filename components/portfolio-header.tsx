@@ -10,39 +10,49 @@ export function PortfolioHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("")
+  const [isClient, setIsClient] = useState(false)
 
   const navItems = getNavItems()
   const personalInfo = getPersonalInfo()
 
   useEffect(() => {
+    // Set isClient to true when component mounts on the client side
+    setIsClient(true)
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      if (typeof window !== 'undefined') {
+        setScrolled(window.scrollY > 20)
 
-      // Determine active section based on scroll position
-      const sections = navItems.filter((item) => item.href.startsWith("#")).map((item) => item.href.substring(1))
+        // Only handle scroll-based active section for anchor links
+        const anchorLinks = navItems.filter((item) => item.href.startsWith("#"))
+        const sections = anchorLinks.map((item) => item.href.substring(1))
 
-      // Find the current section in view
-      for (const section of sections.reverse()) {
-        // Check from bottom to top
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          if (rect.top <= 150) {
-            // If section is at or above 150px from viewport top
-            setActiveSection(section)
-            break
+        // Find the current section in view
+        for (const section of sections.reverse()) {
+          // Check from bottom to top
+          const element = document.getElementById(section)
+          if (element) {
+            const rect = element.getBoundingClientRect()
+            if (rect.top <= 150) { // If section is at or above 150px from viewport top
+              setActiveSection(section)
+              break
+            }
           }
         }
-      }
 
-      // If scrolled to top, set Home as active
-      if (window.scrollY < 100) {
-        setActiveSection("")
+        // If scrolled to top, set Home as active (only if we're on the home page)
+        if (window.scrollY < 100 && window.location.pathname === "/") {
+          setActiveSection("")
+        }
       }
     }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    if (typeof window !== 'undefined') {
+      window.addEventListener("scroll", handleScroll)
+      // Initial check in case we load the page already scrolled
+      handleScroll()
+      return () => window.removeEventListener("scroll", handleScroll)
+    }
   }, [navItems])
 
   const toggleMobileMenu = () => {
@@ -71,7 +81,19 @@ export function PortfolioHeader() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
           {navItems.map((item) => {
-            const isActive = item.href === "/" ? activeSection === "" : activeSection === item.href.substring(1)
+            // Check if it's an anchor link or regular link
+            const isAnchorLink = item.href.startsWith('#');
+            const isHomeLink = item.href === '/';
+            
+            // Determine if the current item is active
+            let isActive = false;
+            if (isAnchorLink) {
+              isActive = activeSection === item.href.substring(1);
+            } else if (isHomeLink) {
+              isActive = activeSection === '' && isClient && window.location.pathname === '/';
+            } else {
+              isActive = isClient && window.location.pathname === item.href;
+            }
 
             return (
               <Link
@@ -119,7 +141,19 @@ export function PortfolioHeader() {
       >
         <nav className="flex flex-col space-y-4">
           {navItems.map((item, index) => {
-            const isActive = item.href === "/" ? activeSection === "" : activeSection === item.href.substring(1)
+            // Check if it's an anchor link or regular link
+            const isAnchorLink = item.href.startsWith('#');
+            const isHomeLink = item.href === '/';
+            
+            // Determine if the current item is active
+            let isActive = false;
+            if (isAnchorLink) {
+              isActive = activeSection === item.href.substring(1);
+            } else if (isHomeLink) {
+              isActive = activeSection === '' && isClient && window.location.pathname === '/';
+            } else {
+              isActive = isClient && window.location.pathname === item.href;
+            }
 
             return (
               <Link

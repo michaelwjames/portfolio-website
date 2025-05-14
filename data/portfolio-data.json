@@ -12,7 +12,11 @@
     "phone": "+1 (415) 555-2671",
     "workingHours": "Monday - Friday, 9am - 5pm PST",
     "availableForWork": true,
-    "badges": ["UI/UX", "Product Design", "Prototyping"],
+    "badges": [
+      "UI/UX",
+      "Product Design",
+      "Prototyping"
+    ],
     "social": [
       {
         "platform": "GitHub",
@@ -69,7 +73,13 @@
         "flag": "🇩🇪"
       }
     ],
-    "interests": ["Design Systems", "Accessibility", "Typography", "Motion Design", "Photography"]
+    "interests": [
+      "Design Systems",
+      "Accessibility",
+      "Typography",
+      "Motion Design",
+      "Photography"
+    ]
   },
   "navigation": [
     {
@@ -91,6 +101,10 @@
     {
       "label": "Projects",
       "href": "#projects"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
     }
   ],
   "experience": [
@@ -104,7 +118,12 @@
         "Led the design for 3 major feature launches, contributing to a 25% increase in user retention",
         "Established design processes that improved team collaboration and product quality"
       ],
-      "technologies": ["Figma", "Adobe XD", "Prototyping", "User Research"]
+      "technologies": [
+        "Figma",
+        "Adobe XD",
+        "Prototyping",
+        "User Research"
+      ]
     },
     {
       "title": "UX Designer",
@@ -116,7 +135,12 @@
         "Improved conversion rates by an average of 22% through data-driven design iterations",
         "Mentored junior designers and facilitated design thinking workshops"
       ],
-      "technologies": ["Sketch", "InVision", "User Testing", "Information Architecture"]
+      "technologies": [
+        "Sketch",
+        "InVision",
+        "User Testing",
+        "Information Architecture"
+      ]
     },
     {
       "title": "UI/UX Intern",
@@ -128,7 +152,11 @@
         "Created a component library that streamlined the design process",
         "Conducted competitive analysis for 5 client projects"
       ],
-      "technologies": ["Adobe Creative Suite", "HTML/CSS", "Wireframing"]
+      "technologies": [
+        "Adobe Creative Suite",
+        "HTML/CSS",
+        "Wireframing"
+      ]
     }
   ],
   "credentials": {
@@ -178,8 +206,25 @@
     ]
   },
   "technicalSkills": {
-    "design": ["Figma", "Sketch", "Adobe XD", "Illustrator", "Photoshop", "InVision", "Principle", "Framer"],
-    "development": ["HTML/CSS", "JavaScript", "React", "Tailwind", "SCSS", "Git", "Responsive Design"],
+    "design": [
+      "Figma",
+      "Sketch",
+      "Adobe XD",
+      "Illustrator",
+      "Photoshop",
+      "InVision",
+      "Principle",
+      "Framer"
+    ],
+    "development": [
+      "HTML/CSS",
+      "JavaScript",
+      "React",
+      "Tailwind",
+      "SCSS",
+      "Git",
+      "Responsive Design"
+    ],
     "uxMethods": [
       "User Research",
       "Usability Testing",
@@ -188,6 +233,12 @@
       "Information Architecture",
       "User Flows"
     ],
-    "softSkills": ["Team Leadership", "Project Management", "Client Communication", "Mentoring", "Presentations"]
+    "softSkills": [
+      "Team Leadership",
+      "Project Management",
+      "Client Communication",
+      "Mentoring",
+      "Presentations"
+    ]
   }
 }

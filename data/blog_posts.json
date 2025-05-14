@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "slug": "getting-started-with-nextjs",
+    "title": "Getting Started with Next.js",
+    "date": "2025-05-10",
+    "excerpt": "Learn the basics of Next.js and how to build modern web applications with this powerful React framework.",
+    "content": "# Getting Started with Next.js\n\nNext.js is a powerful React framework that enables server-side rendering and static site generation. In this post, we'll explore the basics of setting up a new Next.js project and its core features.\n\n## Why Next.js?\n\n- **Server-side Rendering (SSR)**\n- **Static Site Generation (SSG)**\n- **File-system based routing**\n- **API routes**\n\n## Setting Up\n\n```bash\nnpx create-next-app@latest my-app\ncd my-app\nnpm run dev\n```\n\n## Key Features\n\n1. **Pages and Routing**\n2. **API Routes**\n3. **Data Fetching**\n4. **Deployment**\n\n## Conclusion\n\nNext.js provides a great developer experience with many built-in features that make building production-ready React applications a breeze.",
+    "tags": ["nextjs", "react", "web development"]
+  },
+  {
+    "id": 2,
+    "slug": "introduction-to-typescript",
+    "title": "Introduction to TypeScript",
+    "date": "2025-05-05",
+    "excerpt": "Discover how TypeScript can improve your JavaScript development with static typing and better tooling.",
+    "content": "# Introduction to TypeScript\n\nTypeScript is a typed superset of JavaScript that compiles to plain JavaScript. It adds optional static typing to the language, enabling better tooling and catching errors during development.\n\n## Benefits of TypeScript\n\n- **Static Typing**\n- **Enhanced IDE Support**\n- **Better Code Organization**\n- **Early Error Detection**\n\n## Basic Types\n\n```typescript\nlet isDone: boolean = false;\nlet decimal: number = 6;\nlet color: string = \"blue\";\n```\n\n## Interfaces and Types\n\n```typescript\ninterface User {\n  name: string;\n  id: number;\n  email?: string;\n}\n```\n\n## Conclusion\n\nTypeScript brings structure and scalability to JavaScript projects, making it easier to maintain and refactor code as your application grows.",
+    "tags": ["typescript", "javascript", "web development"]
+  }
+]
